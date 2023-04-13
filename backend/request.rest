@@ -1,0 +1,30 @@
+POST        http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Teste CRIAÇÃO ",
+    "description": "Descrição para teste CRIAÇÃO 4",
+    "price": 4000.00,
+    "image": "./images/warning_test"
+}
+###
+
+GET         http://localhost:3000/api/services
+###
+
+GET         http://localhost:3000/api/services/6437089d04b04be0dd12a15b
+###
+
+DELETE      http://localhost:3000/api/services/643701f31fd8a7b53a7426de
+###
+
+PUT         http://localhost:3000/api/services/6437089d04b04be0dd12a15b
+Content-Type: application/json
+
+{
+    "name": "Teste ATUALIZAÇÃO ",
+    "description": "Descrição para teste ATUALZIACAO",
+    "price": 0000.00,
+    "image": "./images/warning_test"
+}
+###

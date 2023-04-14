@@ -21,25 +21,24 @@ const client = new MongoClient(uri,  {
 async function run() {
     try {
       // Connect the client to the server (optional starting in v4.7)
-    //   await client.connect();
-      await client.db("admin").command({ ping: 1 });
-      console.log("**** Banco de Dados ${dbUser} conectado pelo MongoDB Driver ****");
-    } finally {
-      // Ensures that the client will close when you finish/error
-      await client.close();
+    //   await client.connect()
+      await client.db("admin").command({ ping: 1 })
+      console.log(`**** Banco de Dados ${dbUser} conectado pelo MongoDB Driver ****`)
+    } 
+    catch(error){
+
     }
   }
-  run().catch(console.dir);
-
+  module.exports = run
 
 // MONGOOSE
-const mongoose = require('mongoose')
-async function main() {
-    try {
-        await mongoose.connect(`${dbProtocol}://${dbUser}:${dbPassword}@${dbHost}/${dbConnectionOptions}`)
-    console.log(`**** Banco de Dados ${dbUser} conectado pelo MONGOOSE ****`)
-    } catch (error) {
-        console.log(`Erro: ${error.message}`)
-    }
-}
-module.exports = main
+// const mongoose = require('mongoose')
+// async function main() {
+//     try {
+//         await mongoose.connect(`${dbProtocol}://${dbUser}:${dbPassword}@${dbHost}/${dbConnectionOptions}`)
+//     console.log(`**** Banco de Dados ${dbUser} conectado pelo MONGOOSE ****`)
+//     } catch (error) {
+//         console.log(`Erro: ${error.message}`)
+//     }
+// }
+// module.exports = main

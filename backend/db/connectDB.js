@@ -8,7 +8,7 @@ async function main() {
     try {
         await mongoose.connect(
             `mongodb+srv://${dbUser}:${dbPassword}@cluster0.spcsoty.mongodb.net/?retryWrites=true&w=majority`)
-    console.log('**** Banco de Dados "PARTYTIME" conectado ****')
+    console.log(`**** Banco de Dados "${dbUser}" conectado ****`)
     } catch (error) {
         console.log(`Erro: ${error.message}`)
     }

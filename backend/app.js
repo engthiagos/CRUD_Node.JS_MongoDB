@@ -9,8 +9,11 @@ app.use(express.json())                        // express vou trafegar com JSON
 app.listen(port)
 console.log(`**** RODANDO app.js em ${host}:${port} ****`)
 // DB Connection
-const connectDB = require('./db/connectDB')
-connectDB()
+const connectDB = require('./dataBase/connectDB')
+connectDB() 
+app.route('/').get((req, res) => {
+    res.send("Ola teste ok 1")
+})
 // Routes
 const routes = require('./routes/router')
 app.use('/api', routes)

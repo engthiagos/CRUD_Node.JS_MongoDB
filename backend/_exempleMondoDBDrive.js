@@ -68,8 +68,6 @@ async function main() {
 await deleteListingsScrapedBeforeDate(client, 0);
 
 
-
-
     } catch (error) {
         console.log(error)
     } finally {

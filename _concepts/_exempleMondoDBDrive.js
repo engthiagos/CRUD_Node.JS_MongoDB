@@ -196,11 +196,11 @@ main().catch(console.error)
 // async function deleteListingByName(client, nameOfListing) {
 //     const result = await client.db("sample_airbnb").collection("listingsAndReviews")
 //             .deleteOne({ name: nameOfListing })
-//     console.log(`${result.deletedCount} documento deletado.`)
+//     console.log(`${result.deletedCount} documento apagado.`)
 // }
 // Delete MANY document (view line 68)
 async function deleteListingsScrapedBeforeDate(client, field) {
     const result = await client.db("sample_airbnb").collection("listingsAndReviews")
         .deleteMany({ "property_type": { $eq: field } });
-    console.log(`${result.deletedCount} document(s) was/were deleted.`);
+    console.log(`${result.deletedCount} documento(s) apagado(s).`);
 }
